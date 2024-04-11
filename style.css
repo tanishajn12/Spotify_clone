@@ -1,0 +1,580 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: #121212;
+    font-family: 'Montserrat',sans-serif;
+}
+
+/* =====================TOPBAR=========================== */
+.top-bar{
+    position:fixed;
+    display:flex;
+    width:100%;
+    top:0;
+    justify-content: space-between;
+    padding: 8px 25px;
+    background-color :rgb(27, 27, 27);
+}
+
+.top-bar .searchbox{
+    background-color: transparent;
+    border-radius: 10px;
+    border: 2px solid white;
+    padding:3px 8px;
+    margin-right: 20px;
+    color: aliceblue;
+    height:fit-content;
+   
+}
+
+.top-bar .searchbox-login{
+    display:flex;
+    justify-content: space-between;
+    padding-top: 8px;
+}
+
+.top-bar .logo img{
+    width:124px;
+    height:100%;
+    margin-top: 2px;
+    padding-left: 10px;
+
+    
+}
+
+.top-bar .searchbox input{
+    background-color:transparent ;
+    border: none;
+    color: #ffffff;
+    margin-left: 5px; 
+
+}
+
+.top-bar-right .login-signin{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.top-bar-right .login-signin .signin,.login{
+    margin-left: 5px;
+    margin-right: 12px;
+    background-color: aliceblue;
+    color: #121212;
+    padding:2px 10px;
+    font-size: 14px;
+    border-radius: 40px;
+    cursor: pointer;
+    
+}
+
+.top-bar-right .login-signin .profile{
+    font-size: 20px;
+    background-color: #121212;
+    color: aliceblue;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* ===============STYLING FOR MAIN CONTAINER===================== */
+.main-container {
+    width: 100%;
+    height: calc(100vh - 53px);
+    margin-top: 53px;
+}
+
+.sidebar{
+    position: fixed;
+    left:0;
+    top:53px;
+    height: cal(100vh-53px);
+    bottom:0;
+    width:230px;
+    background-color:rgb(27, 27, 27) ;
+}
+
+/* .sidebar .logo img{
+    width:130px;
+    margin-top: 10px;
+    margin-left: 30px;
+    
+} */
+
+.sidebar .navigation ul{
+    list-style: none;
+    margin-top: 20px;
+}
+
+.sidebar .navigation ul li{
+    padding : 10px 0px;
+}
+
+.sidebar .navigation ul li a{
+    color: aliceblue;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.navigation i{
+    font-size: 16px;
+    margin-left: 30px;
+    margin-right: 10px;
+}
+
+/* STYLING FOR MAIN CONTENT */
+.main-content{
+    box-sizing: border-box;
+    padding: 10px 20px;
+    display:flex;
+    width:calc(100% - 230px);
+    margin-left:230px;
+
+}
+
+.main-content .spotify-section{
+    display:flex;
+    flex-direction: column;
+    width:66%;
+}
+
+.main-content .continue-listening h2{
+    color:aliceblue;
+    font-size: 20px;
+}
+
+.main-content .continue-listening {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.continue-listening .continue-listening-list{
+    display:flex;
+    gap:8px;
+
+}
+
+.continue-listening-list .item{
+    padding:10px;
+    background-color: #181818;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 150px;
+    flex:0 0 auto;
+
+}
+
+.continue-listening-list .item img{
+    width:100%;
+    border-radius: 6px;
+    margin-bottom: 5px;
+    height: auto;
+}
+
+.continue-listening-list .item .play{
+    position:relative;
+}
+
+.continue-listening-list .item .play .fa-solid{
+    position:absolute;
+    right:10px;
+    top:-50px;
+    padding:8px 10px;
+    background-color:#1db954 ;
+    border-radius: 100%;
+    opacity: 0;
+    transition: all ease 0.4s;
+}
+
+
+.continue-listening-list .item:hover .play .fa-solid{
+    opacity:1;
+    transform:translateY(-10px)
+}
+
+.continue-listening-list .item h4{
+    color: aliceblue;
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.continue-listening::-webkit-scrollbar {
+    display: none;
+}
+
+.continue-listening .continue-listening-list p{
+    color: #b8b8b8;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* STYLING FOR SONG QUEUE RIGHT */
+.main-content .song-queue-right{
+    position:fixed;
+    width:28%;
+    right:0;
+    border-left: 1px solid rgb(255, 255, 255);
+    background-color:#121212;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: min-content;
+    grid-gap: 12px;
+    padding-right:5px;
+    overflow-y: auto;
+    height:100vh;
+    
+}
+
+.song {
+    display: grid;
+    grid-template-columns: 0.6fr 1fr 2fr 0.4fr;
+    align-items: center;
+    grid-gap:5px;
+}
+
+.queue-number{
+    font-size: 14px;
+    font-weight: bold;
+    color:aliceblue;
+    text-align: center;
+
+}
+
+h2{
+    font-size: 20px;
+    margin-bottom: 5px;
+    margin-left:10px;
+    color: aliceblue; 
+}
+
+.song img {
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+}
+
+.song-info {
+    font-size: 14px;
+    color:aliceblue;
+    text-align: left;
+}
+
+.add-to-favorites {
+    cursor: pointer;
+    font-size: 15px;  
+    color: aliceblue;
+    background-color: transparent;
+    border: none;
+}
+
+.song-queue-right::-webkit-scrollbar{
+    display:none;
+}
+
+/* STYLING FOR LATEST RELEASE */
+.spotify-section .latest-release h2{
+    color:aliceblue;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.spotify-section .latest-release{
+    overflow-x: auto;
+    margin-top:15px;
+}
+
+.latest-release-wrapper .latest-release .latest-release-list{
+    display:flex;
+    gap:8px;
+
+}
+
+.latest-release-list .item{
+    padding:10px;
+    background-color: #181818;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 150px;
+    flex: 0 0 auto;
+
+}
+
+.latest-release-list .item img{
+    width:100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 5px;
+}
+
+.latest-release-list .item .play{
+    position:relative;
+}
+
+.latest-release-list .item .play .fa-solid{
+    position:absolute;
+    right:10px;
+    top:-50px;
+    padding:8px 10px;
+    background-color:#1db954 ;
+    border-radius: 100%;
+    opacity: 0;
+    transition: all ease 0.4s;
+}
+
+
+.latest-release-list .item:hover .play .fa-solid{
+    opacity:1;
+    transform:translateY(-10px)
+}
+
+.latest-release-list .item h4{
+    color: aliceblue;
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.latest-release-list p{
+    color: #b8b8b8;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.latest-release::-webkit-scrollbar {
+    display: none;
+}
+
+/* ================================================= */
+/* POPULAR SINGERS */
+.spotify-section .singers h2{
+    color:rgb(236, 236, 236);
+    font-size: 20px;
+    margin-top:10px;
+    margin-bottom: 5px;
+}
+
+.spotify-section .singers{
+    overflow-x: auto;
+    margin-top:15px;
+}
+
+.singers .singers-list{
+    display:flex;
+    gap:8px;
+
+}
+
+.singers-list .singer{
+    padding:10px;
+    background-color: #121212;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 130px;
+    flex: 0 0 auto;
+
+}
+
+.singers-list .singer img{
+    width:130px;
+    height:120px ;
+    border-radius: 100px;
+    margin-bottom: 5px;
+}
+
+.singers-list .singer h4{
+    color: aliceblue;
+    font-size: 16px;
+    margin-bottom: 2px;
+    margin-left:20px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.singers::-webkit-scrollbar {
+    display: none;
+}
+
+/* MOOD STYLING */
+.spotify-section .music-moods h2{
+    color:rgb(236, 236, 236);
+    font-size: 20px;
+    margin-top:10px;
+    margin-bottom: 5px;
+}
+
+.spotify-section .music-moods{
+    overflow-x: auto;
+    margin-top:15px;
+}
+
+.music-moods .music-moods-list{
+    display:flex;
+    gap:8px;
+
+}
+
+.music-moods-list .mood{
+    padding:10px;
+    position:relative;
+    background-color: #121212;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 130px;
+    flex: 0 0 auto;
+
+}
+
+.music-moods-list .mood img{
+    width:130px;
+    height:120px ;
+    border-radius: 100px;
+    margin-bottom: 5px;
+    opacity:0.5;
+    transition: opacity 0.3s ease;
+}
+
+
+.music-moods-list .mood h4{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    color: aliceblue;
+    font-size: 16px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+
+}
+
+.music-moods::-webkit-scrollbar {
+    display: none;
+}
+
+.music-moods-list .mood:hover img {
+    opacity: 1; 
+    transform: scale(1.10);
+}
+
+.music-moods-list .mood:hover h4 {
+    opacity: 1; /* Make text visible on hover */
+}
+
+@media screen and (max-width:1140px) {
+    .sidebar{
+        display:none;
+    }
+
+    .main-content{
+        width:100%;
+        margin-left:0;
+    }
+}
+
+
+@media screen and (max-width: 835px) {
+    .song-queue-right{
+        display:none!important;
+    }
+
+    .main-content .spotify-section{
+        width:100%;
+    }
+
+}
+
+/* best of bollywood */
+.spotify-section .best-bollywood h2{
+    color:aliceblue;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.best-bollywood{
+    overflow-x: auto;
+    margin-top:15px;
+}
+
+.best-bollywood .best-bollywood-list{
+    display:flex;
+    gap:8px;
+
+}
+
+.best-bollywood-list .item{
+    padding:10px;
+    background-color: #181818;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 150px;
+    flex: 0 0 auto;
+
+}
+
+.best-bollywood-list .item img{
+    width:100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 5px;
+}
+
+.best-bollywood-list .item .play{
+    position:relative;
+}
+
+.best-bollywood-list .item .play .fa-solid{
+    position:absolute;
+    right:10px;
+    top:-50px;
+    padding:8px 10px;
+    background-color:#1db954 ;
+    border-radius: 100%;
+    opacity: 0;
+    transition: all ease 0.4s;
+}
+
+
+.best-bollywood-list .item:hover .play .fa-solid{
+    opacity:1;
+    transform:translateY(-10px)
+}
+
+.best-bollywood-list .item h4{
+    color: aliceblue;
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.best-bollywood-list p{
+    color: #b8b8b8;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.best-bollywood::-webkit-scrollbar {
+    display: none;
+}
